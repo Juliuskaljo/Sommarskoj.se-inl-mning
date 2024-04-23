@@ -1,0 +1,37 @@
+.navbar {
+	display: grid;
+	grid-template-rows: auto 1fr; /* Två rader, den första auto för att anpassa till innehållet */
+	grid-template-columns: 6fr 1fr; /* Två kolumner */
+  }
+
+.navbar ul {
+	display: flex;
+	flex-direction: row;
+	list-style-type: none;
+	padding: 0;
+	justify-content: center;
+	justify-content: space-around;
+}
+
+.navbar ul li a {
+	text-decoration: none;
+	color: black;
+	font-size: 16px;
+}
+
+.navbar ul li {
+	margin: 0 10px;
+	font-size: 14px;
+}
+
+img, .logo {
+	width: 200px;
+	height: 100px;
+	justify-self: center;
+}
+
+img.cart {
+	width: 30px;
+	height: 30px;
+	padding-top: 1em;
+}
