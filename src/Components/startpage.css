@@ -1,0 +1,22 @@
+.toy-cards {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: #8C99E6;
+	padding: 1em;
+	margin-top: 10px;
+	border-radius: 5px;
+}
+
+.toy-cards p {
+	margin: 5px;
+}
+
+.add-button {
+	background-color: #384ECA;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	padding: 1em 3em;
+	margin-top: 1em;
+}

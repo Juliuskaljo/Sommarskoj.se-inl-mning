@@ -1,8 +1,10 @@
 import { NavLink, Outlet } from "react-router-dom";
 import React from "react";
 import logo from "../assets/logo.png";
-import Cart from "../assets/Cart.svg";
+import cartLogo from "../assets/cartLogo.svg";
+import Cart from "../Components/Cart";
 import "../Components/header.css";
+import "../Components/footer.css";
 
 
 
@@ -11,7 +13,10 @@ const Root = () => {
 	<div className="app">
 	  <nav className="navbar">
 		<img className="Logo" src={logo} alt="logo" />
-		<img className="cart" src={Cart} alt="cart" />
+
+		<NavLink to="/cart">
+		<img className="cart" src={cartLogo} alt="cart" />
+		</NavLink>
 		<ul>
 			<li>
 			<NavLink to="/">Hem</NavLink>
@@ -26,6 +31,14 @@ const Root = () => {
 		
 	  </nav>
 	  <Outlet />
+
+	  <footer>
+		<div className="footer-container">
+		<h5>Sommarskoj@info.se</h5>
+		<h5>08-123 456 78</h5>
+		<NavLink to="/admin">Admin</NavLink>
+		</div>
+	  </footer>
 	</div>
   );
 }
