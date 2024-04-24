@@ -27,9 +27,11 @@ const Startpage = () => {
 	<div className='grid-container'>
 		{toyList.map((toy) => (
 			<div className='toy-cards' key={toy.id}>
+				<img className='image-card' src={toy.image} alt={toy.name} />
 				<h3><strong>{toy.name}</strong></h3>
+				<p><strong>Färg:</strong> {toy.color}</p>
 				<p><strong>Pris:</strong> {toy.price}Kr</p>
-				<p><strong>Färg:</strong> {toy.color}</p><button className='add-button'>Lägg till</button>
+				<button className='add-button'>Lägg till</button>
 			</div>
 		))}
 	</div>
