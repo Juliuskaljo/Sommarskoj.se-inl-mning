@@ -1,0 +1,16 @@
+.cart-grid {
+	border: 1px solid #2a2a2a;
+}
+
+.cart-grid li {
+ display: flex;
+ flex-direction: row;
+ justify-content: space-between;
+ padding: 10px;
+ border-bottom: 1px solid #2a2a2a;
+}
+
+.cart-grid li img {
+ width: 100px;
+ height: 100px;
+}

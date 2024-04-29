@@ -2,9 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { db } from '../Data/fire.js';
 import { collection, getDocs } from 'firebase/firestore/lite';
 import './startpage.css';
+import { useStore } from '../Data/store.js';
 
 const Startpage = () => {
 
+	const { addToCart } = useStore();
 	const [toyList, setToyList] = useState([]);
 
 	const toysCollectionRef = collection(db, 'toys');
@@ -31,7 +33,7 @@ const Startpage = () => {
 				<h3><strong>{toy.name}</strong></h3>
 				<p><strong>Färg:</strong> {toy.color}</p>
 				<p><strong>Pris:</strong> {toy.price}Kr</p>
-				<button className='add-button'>Lägg till</button>
+				<button className='add-button' onClick={() => addToCart(toy)}>Lägg till</button>
 			</div>
 		))}
 	</div>

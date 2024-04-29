@@ -1,7 +1,10 @@
+import { useState } from "react";
+import Contactform from "./Contactform";
+
 const Contact = () => {
 	  return (
 	<div>
-	  <h1>Contact</h1>
+		<h1>Kontakt</h1>
 	</div>
   );
 }

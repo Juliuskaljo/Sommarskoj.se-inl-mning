@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { deleteProduct, editProduct, addProduct, getToyList } from '../Data/crud.js';
 import './startpage.css';
+import './admin.css';
 
 const Startpage = () => {
     const [toyList, setToyList] = useState([]);
@@ -51,7 +52,7 @@ const Startpage = () => {
 
 	return (
 		<div className='grid-container'>
-			<div>
+			<div className='add-input'>
 				<input placeholder='Lägg till namn'
 				onChange={(e) => {
 					setNewName(e.target.value);
@@ -74,14 +75,14 @@ const Startpage = () => {
 				}}
 				/>
 	
-				<button onClick={handleAddProduct}>Lägg till</button>
+				<button className='add-product-btn' onClick={handleAddProduct}>Lägg till</button>
 			</div>
 	
 			{toyList.map((toy) => (
 				<div className='toy-cards' key={toy.id}>
 					<img className='image-card'
 					 src={toy.image} alt={toy.name}
-					/> <input type="url" placeholder='Byt bild' onChange={(e) => setEditedImage (e.target.value)} />
+					/> <input type="url" placeholder='Byt bild med URL' onChange={(e) => setEditedImage (e.target.value)} />
 					
 					<h3><strong>{toy.name}</strong>
 					<input placeholder='Ändra namn' onChange={(e) => setEditedName(e.target.value) }/>
@@ -95,11 +96,9 @@ const Startpage = () => {
 					<input placeholder='Ändra pris' onChange={(e) => setEditedPrice(e.target.value)}/>
 					</p>
 	
-					<button className='add-button'>Lägg till</button>
+					<button className='edit-product-btn' onClick={() => handleEditProduct (toy.id)}>Ändra</button>
 	
-					<button onClick={() => handleEditProduct (toy.id)}>Ändra</button>
-	
-					<button onClick={() => handleDeleteProduct(toy.id)}> Ta bort</button>
+					<button className='delete-product-btn' onClick={() => handleDeleteProduct(toy.id)}> Ta bort</button>
 				</div>
 			))}
 		</div>
