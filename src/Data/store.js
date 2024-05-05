@@ -11,6 +11,7 @@ const useStore = create((set) => ({
     removeFromCart: (toyToRemove) => set((state) => ({
         cart: state.cart.filter((toy) => toy.id !== toyToRemove.id)
     })),
+
 }));
 
 export { useStore };

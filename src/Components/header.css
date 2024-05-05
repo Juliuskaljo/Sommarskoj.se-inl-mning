@@ -1,7 +1,8 @@
 .navbar {
 	display: grid;
-	grid-template-rows: auto 1fr; /* Två rader, den första auto för att anpassa till innehållet */
-	grid-template-columns: 6fr 1fr; /* Två kolumner */
+	grid-template-rows: auto 1fr; 
+	grid-template-columns: 6fr 1fr;
+	margin-bottom: 3em;
   }
 
 .navbar ul {
@@ -10,13 +11,12 @@
 	list-style-type: none;
 	padding: 0;
 	justify-content: center;
-	justify-content: space-around;
 }
 
 .navbar ul li a {
-	text-decoration: none;
 	color: black;
 	font-size: 16px;
+	margin: 1em;
 }
 
 .navbar ul li {
@@ -34,4 +34,41 @@ img.cart {
 	width: 30px;
 	height: 30px;
 	padding-top: 1em;
+	padding-left: 5em;
 }
+
+@media (max-width: 768px) {
+	.navbar ul {
+		display: flex;
+		flex-direction: row;
+		list-style-type: none;
+		padding: 0;
+		justify-content: center;
+		justify-content: space-around;
+	}
+
+	img.cart {
+		width: 30px;
+		height: 30px;
+		padding-top: 1em;
+		padding-left: 0;
+	}
+	
+}
+
+@media (max-width: 365px) {
+	.navbar ul li a {
+		color: black;
+		font-size: 14px;
+	}
+}
+
+@media (max-width: 330px) {
+	.navbar ul li a {
+		color: black;
+		font-size: 14px;
+		margin: 0;
+	}
+	
+}
+

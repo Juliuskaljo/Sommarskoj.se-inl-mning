@@ -1,8 +1,7 @@
 import { NavLink, Outlet } from "react-router-dom";
 import React from "react";
-import logo from "../assets/logo.png";
-import cartLogo from "../assets/cartLogo.svg";
-import Cart from "../Components/Cart";
+import logo from "/logo.png";
+import cartLogo from "/cartLogo.svg";
 import "../Components/header.css";
 import "../Components/footer.css";
 

@@ -1,10 +1,13 @@
 import React from 'react';
 import { useStore } from '../Data/store';
 import './cart.css';
+import Form from './Contactform';
 
 const Cart = () => {
   const { cart } = useStore();
   const { removeFromCart } = useStore();
+
+  const totalPrice = cart.reduce((total, toy) => total + parseInt(toy.price), 0);
 
   return (
     <div>
@@ -19,22 +22,15 @@ const Cart = () => {
             <strong><p>{toy.name}</p></strong>
             <p><strong>Färg:</strong> {toy.color}</p>
             <p><strong>Pris:</strong> {toy.price}Kr</p>
-			<button onClick={() => removeFromCart(toy)}>Ta bort</button>
+			<button className='delete-from-cart-btn' onClick={() => removeFromCart(toy)}>Ta bort</button>
           </li>
         ))}
       </div>
 	 </ul> 
+	 <p className='total-price'>Totalt: {totalPrice}Kr</p>
 
-	 <form>
-		<label className='cart-form'>
-			<input type="text" placeholder="Förnamn" />
-			<input type="text" placeholder='Efternamn' />
-			<input type="text" placeholder='Adress' />
-			<input type="text" placeholder='Telefonnummer' />
-		</label>
-		<button className='cart-button-accept'>Skicka beställning</button>
-		<button className='cart-button-decline'> Avbryt</button>
-	 </form>
+	<Form />
+	
     </div>
   );
 }
