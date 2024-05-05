@@ -19,6 +19,10 @@
 	margin: 1em;
 }
 
+nav ul li a:hover{
+	color: #384ECA;
+}
+
 .navbar ul li {
 	margin: 0 10px;
 	font-size: 14px;
